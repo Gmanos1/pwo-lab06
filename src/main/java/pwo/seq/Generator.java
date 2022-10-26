@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.seq;
 
 import java.math.BigDecimal;
@@ -10,7 +6,9 @@ import pwo.utils.SequenceGenerator;
 import pwo.utils.SequenceGenerator;
 
 /**
- *
+ * Klasa abstrakcyjna implementujaca interfejs SequenceGenerator
+ * 
+ * @version 1.0.0
  * @author gman
  */
 abstract public class Generator implements SequenceGenerator {
@@ -21,11 +19,20 @@ abstract public class Generator implements SequenceGenerator {
             f_2 = null,
             f_3 = null;
 
+    /**
+    * Metoda ustawiajaca wartosc indexu na 0
+    */
     @Override
     public void reset() {
         lastIndex = 0;
     }
 
+    /**
+     * Zwraca wartosc ciagu dla podanego indeksu
+     * 
+     * @param i indeks
+     * @return 
+     */
     @Override
     public final BigDecimal getTerm(int i) {
         if (i < 0) {

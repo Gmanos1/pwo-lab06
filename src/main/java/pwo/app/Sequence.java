@@ -1,15 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.app;
 
 /**
- *
+ * Klasa poczatkowa, od ktorej zaczyna sie wykonywac program, w zaleznosci
+ * od trybu dzialania wynik jest zapisywany do pliku lub wypisywany na stdout.
+ * 
+ * @version 1.0.0
  * @author gman
  */
 public class Sequence {
 
+    
     public static void main(String[] args) {
 
         switch (args.length) {

@@ -5,18 +5,25 @@
 package pwo.seq;
 
 /**
- *
+ * Jest to generator ciagu Lucasa,
  * @author gman
  */
 import java.math.BigDecimal;
 
 public class LucasGenerator extends FibonacciGenerator {
 
+     /**
+     * Konstruktor klasy LucasGenerator, 
+     * ustawia poczatkowy wyraz na 2
+     */
     public LucasGenerator() {
         current = new BigDecimal(2);
         f_2 = new BigDecimal(2);
     }
 
+    /**
+    * Powoduje, że metoda {@link #nextTerm()} rozpoczyna liczenie od 2.<br>
+    */
     @Override
     public void reset() {
         super.reset();
@@ -24,6 +31,11 @@ public class LucasGenerator extends FibonacciGenerator {
         f_2 = new BigDecimal(2);
     }
 
+    /**
+    * Zwraca koleny wyraz ciągu Lucasa.
+    *
+    * @return Wartość wyrazu ciągu
+    */
     @Override
     public BigDecimal nextTerm() {
         if (lastIndex == 0) {

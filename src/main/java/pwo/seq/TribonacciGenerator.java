@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.seq;
 
 /**
- *
+ * Jest to generator ciagu Tribonnaciego,
  * @author gman
  */
 
@@ -14,16 +10,28 @@ import java.math.BigDecimal;
 public class TribonacciGenerator extends
         FibonacciGenerator {
 
+    /**
+     * Konstruktor klasy TribonacciGenerator, 
+     * ustawia poczatkowy wyraz na 0
+     */
     public TribonacciGenerator() {
         f_3 = new BigDecimal(0);
     }
 
+    /**
+     * Metoda sluzaca do zresetowania ciagu (ustawienienia pierwszego wyrazu ciagu na 0)
+     * 
+     */
     @Override
     public void reset() {
         super.reset();
         f_3 = new BigDecimal(0);
     }
-
+    /**
+    * Zwraca koleny wyraz ciągu Tribonnaciego.
+    *
+    * @return Wartość wyrazu ciągu
+    */
     @Override
     public BigDecimal nextTerm() {
         if (lastIndex > 2) {

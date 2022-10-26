@@ -1,22 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.seq;
 import java.math.BigDecimal;
 
 /**
- *
+ * Klasa implementujaca generator ciagu Fibonacciego
+ * 
+ * @version 1.0.0
  * @author gman
  */
 public class FibonacciGenerator extends Generator {
 
+     /**
+     * Konstruktor klasy TribonacciGenerator, 
+     * ustawia poczatkowe wyrazu na 1 i 0
+     */
     public FibonacciGenerator() {
         current = new BigDecimal(0);
         f_1 = new BigDecimal(1);
         f_2 = new BigDecimal(0);
     }
-
+    
+    /**
+    * Powoduje, że metoda {@link #nextTerm()} rozpoczyna od 0.<br>
+    * Nie wplywa na działanie metody {@link #getTerm(int)}.
+    */
     @Override
     public void reset() {
         super.reset();
@@ -25,6 +31,11 @@ public class FibonacciGenerator extends Generator {
         f_2 = new BigDecimal(0);
     }
 
+    /**
+    * Zwraca kolejny wyraz ciągu Fibonacciego.
+    *
+    * @return Wartość wyrazu ciągu
+    */
     @Override
     public BigDecimal nextTerm() {
 

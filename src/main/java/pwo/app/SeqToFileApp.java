@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.app;
 
 /**
- *
+ * Klasa zapisujaca wygenerowany ciag do pliku
+ * 
+ * @version 1.0.0
  * @author gman
  */
 import pwo.seq.SeqType;
@@ -19,6 +17,13 @@ class SeqToFileApp {
     protected Integer from = null, to = null;
     protected String fileName = null;
     
+    /**
+     * Metoda pobierajaca argumenty wejsciowe
+     * i je parsujaca
+     * 
+     * @param args seqType - typ ciagu {@link SeqType}, from, to - zakres generowania ciagu, fileName - nazwa pliku wyjsciowego
+     * @return 
+     */
     protected boolean getArgs(String[] args) {
         try {
             seqType = SeqType.fromString(args[0]);
@@ -37,11 +42,22 @@ class SeqToFileApp {
         return seqType != null && from >= 0 && to >= 0;
     }
 
+    /**
+     * Metoda zapisujaca wygenerowany ciag do pliku
+     * 
+     * @return true jezeli zapis sie powiodl, false jezeli nie
+     */
     protected boolean wirteSeq() {
         return SequenceTools.writeToFile(seqType.getGenerator(),
                 from, to, fileName);
     }
 
+    /**
+    * Metoda poczatkowa, sprawdzajaca 
+    * czy argumenty zostaly poprawnie przekazane
+    * 
+    * @param args argumenty wywolania programu
+    */ 
     public void run(String[] args) {
         System.out.println("Sequence to file CLI app");
         if (!getArgs(args)) {
